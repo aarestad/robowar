@@ -41,9 +41,9 @@ Module ChangeResolution
 		Dim dmDisplayFrequency As Integer
 	End Structure
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function EnumDisplaySettings Lib "user32"  Alias "EnumDisplaySettingsA"(ByVal lpszDeviceName As Integer, ByVal modeIndex As Integer, ByRef lpDevMode As Any) As Boolean
+    Private Declare Function EnumDisplaySettings Lib "user32" Alias "EnumDisplaySettingsA" (ByVal lpszDeviceName As Integer, ByVal modeIndex As Integer, ByRef lpDevMode As DEVMODE) As Boolean
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function ChangeDisplaySettings Lib "user32"  Alias "ChangeDisplaySettingsA"(ByRef lpDevMode As Any, ByVal dwflags As Integer) As Integer
+    Private Declare Function ChangeDisplaySettings Lib "user32" Alias "ChangeDisplaySettingsA" (ByRef lpDevMode As DEVMODE, ByVal dwflags As Integer) As Integer
 	
 	Private Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Integer, ByVal nIndex As Integer) As Integer
 	

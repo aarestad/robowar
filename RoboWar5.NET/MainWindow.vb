@@ -109,7 +109,7 @@ Friend Class MainWindow
 	
 	' SNDPLAYSOUND API      -       To play sounds (no kidding?)
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function sndPlaySound Lib "winmm"  Alias "sndPlaySoundA"(ByRef SoundData As Any, ByVal uFlags As Integer) As Integer
+    Private Declare Function sndPlaySound Lib "winmm" Alias "sndPlaySoundA" (ByRef SoundData As Byte, ByVal uFlags As Integer) As Integer
 	'Then we have to declare the constants that go along with the sndPlaySound function
 	Const SND_ASYNC As Integer = &H1 'ASYNC allows us to play waves with the ability to interrupt
 	'Const SND_LOOP = &H8        'LOOP causes to sound to be continuously replayed
@@ -702,8 +702,6 @@ Friend Class MainWindow
 			Case 5
 				Normal.Checked = False
 				Fast.Checked = True
-				'UPGRADE_ISSUE: PictureBox property Arena.AutoRedraw was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				Arena.AutoRedraw = False
 				BattleSpeed = 1E-37
 			Case 6
 				Normal.Checked = False
@@ -712,15 +710,11 @@ Friend Class MainWindow
 			Case 7
 				Normal.Checked = False
 				NoDisplay.Checked = True
-				'UPGRADE_ISSUE: PictureBox property Arena.AutoRedraw was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				Arena.AutoRedraw = False
 				BattleSpeed = 1E-37
 				HideBattle = True
 			Case 8
 				Normal.Checked = False
 				Ultra.Checked = True
-				'UPGRADE_ISSUE: PictureBox property Arena.AutoRedraw was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				Arena.AutoRedraw = False
 				BattleSpeed = 1E-37
 				HideBattle = True
 		End Select
@@ -962,8 +956,7 @@ Friend Class MainWindow
 		
 		For counter = 1 To NumberOfRobotsPresent
 			If (X - RobotLeft(counter)) ^ 2 + (Y - RobotTop(counter)) ^ 2 < 100 Then
-				'UPGRADE_ISSUE: PictureBox property Arena.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
-				Arena.Cursor = vbCustom
+                Arena.Cursor = Cursors.Default
 				Draging = counter
 			End If
 		Next counter
@@ -987,58 +980,57 @@ Friend Class MainWindow
 		Dim X As Single = eventArgs.X
 		Dim Y As Single = eventArgs.Y
 		
-		'UPGRADE_ISSUE: Constant vbCustom was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
 		Dim Turret As Integer
-		If Arena.Cursor Is vbCustom Then
-			TurretX2(Draging) = X + TurretX2(Draging) - RobotLeft(Draging)
-			TurretY2(Draging) = Y + TurretY2(Draging) - RobotTop(Draging)
-			RobotLeft(Draging) = X
-			RobotTop(Draging) = Y
-			Arena.Cursor = System.Windows.Forms.Cursors.Default
-			
-			If DebuggedRobot <> 0 Then
-				'UPGRADE_ISSUE: PictureBox method Arena.PaintPicture was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				Arena.PaintPicture(Robot_(Draging), RobotLeft(Draging) - 16, RobotTop(Draging) - 16)
-				Select Case Draging
-					Case 1
-						Turret = Robot1Turret
-					Case 2
-						Turret = Robot2Turret
-					Case 3
-						Turret = Robot3Turret
-					Case 4
-						Turret = Robot4Turret
-					Case 5
-						Turret = Robot5Turret
-					Case 6
-						Turret = Robot6Turret
-				End Select
-				If Turret = 1 Then
-					'UPGRADE_ISSUE: PictureBox method Arena.Line was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
+        If Arena.Cursor Is Cursors.Default Then
+            TurretX2(Draging) = X + TurretX2(Draging) - RobotLeft(Draging)
+            TurretY2(Draging) = Y + TurretY2(Draging) - RobotTop(Draging)
+            RobotLeft(Draging) = X
+            RobotTop(Draging) = Y
+            Arena.Cursor = System.Windows.Forms.Cursors.Default
+
+            If DebuggedRobot <> 0 Then
+                'UPGRADE_ISSUE: PictureBox method Arena.PaintPicture was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
+                Arena.PaintPicture(Robot_(Draging), RobotLeft(Draging) - 16, RobotTop(Draging) - 16)
+                Select Case Draging
+                    Case 1
+                        Turret = Robot1Turret
+                    Case 2
+                        Turret = Robot2Turret
+                    Case 3
+                        Turret = Robot3Turret
+                    Case 4
+                        Turret = Robot4Turret
+                    Case 5
+                        Turret = Robot5Turret
+                    Case 6
+                        Turret = Robot6Turret
+                End Select
+                If Turret = 1 Then
+                    'UPGRADE_ISSUE: PictureBox method Arena.Line was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
 					Arena.Line (RobotLeft(Draging), RobotTop(Draging)) - (TurretX2(Draging), TurretY2(Draging)), System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
-				ElseIf Turret = 2 Then 
-					'UPGRADE_ISSUE: PictureBox method Arena.Circle was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
+                ElseIf Turret = 2 Then
+                    'UPGRADE_ISSUE: PictureBox method Arena.Circle was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
 					Arena.Circle (TurretX2(Draging), TurretY2(Draging)), 1, System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
-				End If
-				
-				DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, vbLf & "x ", "old1")
-				DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, vbLf & "Speedx ", "old2" & vbLf & "Speedx ")
-				
-				Turret = InStr(DebuggingWindow.DebugMsg, "old1")
-				
-				DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, Mid(DebuggingWindow.DebugMsg, Turret, InStr(DebuggingWindow.DebugMsg, "old2") + 4 - Turret), vbLf & "x " & RobotLeft(Draging) & vbLf & "y " & RobotTop(Draging))
-				
-				'UPGRADE_ISSUE: Form method DebuggingWindow.Cls was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				DebuggingWindow.Cls()
-				'UPGRADE_ISSUE: Form method DebuggingWindow.Print was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-				DebuggingWindow.Print(DebuggingWindow.DebugMsg)
-				
-				Draging = 0
-				Exit Sub
-			End If
-			
-			Draging = 0
-		End If
+                End If
+
+                DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, vbLf & "x ", "old1")
+                DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, vbLf & "Speedx ", "old2" & vbLf & "Speedx ")
+
+                Turret = InStr(DebuggingWindow.DebugMsg, "old1")
+
+                DebuggingWindow.DebugMsg = Replace(DebuggingWindow.DebugMsg, Mid(DebuggingWindow.DebugMsg, Turret, InStr(DebuggingWindow.DebugMsg, "old2") + 4 - Turret), vbLf & "x " & RobotLeft(Draging) & vbLf & "y " & RobotTop(Draging))
+
+                'UPGRADE_ISSUE: Form method DebuggingWindow.Cls was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
+                DebuggingWindow.Cls()
+                'UPGRADE_ISSUE: Form method DebuggingWindow.Print was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
+                DebuggingWindow.Print(DebuggingWindow.DebugMsg)
+
+                Draging = 0
+                Exit Sub
+            End If
+
+            Draging = 0
+        End If
 		
 		If RunningTournament Then StopTournament.Focus() Else BattleHaltButton.Focus()
 		
@@ -2386,7 +2378,7 @@ Friend Class MainWindow
 						If Inton(RNN) Then
 							If RobotQuePos(RNN) > 0 Then
 								If RobotStackPos(RNN) > 99 Then
-									ErrorCode = BuggyOverflow : GoTo Buggy
+                                    ErrorCode = BuggyOverflow
 								End If
 								RobotStackPos(RNN) = RobotStackPos(RNN) + 1
 								RobotStack(RNN, RobotStackPos(RNN)) = RobotInstPos(RNN) + 1 'There is a lot of confusion about how
@@ -2421,7 +2413,7 @@ Friend Class MainWindow
 								If RRadar <> 0 Then
 									If RRadar <= RadarParam(RNN) Then 'intrange sends back 601 for no range instead of 0
 										If RobotStackPos(RNN) > 99 Then
-											ErrorCode = BuggyOverflow : GoTo Buggy
+                                            ErrorCode = BuggyOverflow
 										End If
 										RobotStackPos(RNN) = RobotStackPos(RNN) + 1
 										RobotStack(RNN, RobotStackPos(RNN)) = RobotInstPos(RNN) + 1
@@ -2460,7 +2452,7 @@ Friend Class MainWindow
 								If RRange <= RangeParam(RNN) Then 'intrange sends back 601 for no range instead of 0
 									If RobotAlive(RangedRobot(RNN)) = 1 Then
 										If RobotStackPos(RNN) > 99 Then
-											ErrorCode = BuggyOverflow : GoTo Buggy
+                                            ErrorCode = BuggyOverflow
 										End If
 										RobotStackPos(RNN) = RobotStackPos(RNN) + 1
 										RobotStack(RNN, RobotStackPos(RNN)) = RobotInstPos(RNN) + 1
@@ -2473,7 +2465,7 @@ Friend Class MainWindow
 							If ChrononInst(RNN) >= 0 Then
 								If ChrononParam(RNN) <= Chronon Then
 									If RobotStackPos(RNN) > 99 Then
-										ErrorCode = BuggyOverflow : GoTo Buggy
+                                        ErrorCode = BuggyOverflow
 									End If
 									RobotStackPos(RNN) = RobotStackPos(RNN) + 1
 									RobotStack(RNN, RobotStackPos(RNN)) = RobotInstPos(RNN) + 1
@@ -4777,10 +4769,10 @@ dontrundronecode:
 						Arena.PaintPicture(Robot_(RNN), RobotLeft(RNN) - 16, RobotTop(RNN) - 16)
 						If RobotTurretType(RNN) = 1 Then
 							'UPGRADE_ISSUE: PictureBox method Arena.Line was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-							Arena.Line (RobotLeft(RNN), RobotTop(RNN)) - (TurretX2(RNN), TurretY2(RNN)), System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
+                            'Arena.Line (RobotLeft(RNN), RobotTop(RNN)) - (TurretX2(RNN), TurretY2(RNN)), System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
 						ElseIf RobotTurretType(RNN) = 2 Then 
 							'UPGRADE_ISSUE: PictureBox method Arena.Circle was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-							Arena.Circle (TurretX2(RNN), TurretY2(RNN)), 1, System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
+                            'Arena.Circle (TurretX2(RNN), TurretY2(RNN)), 1, System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black)
 						End If
 					Else
 						RobotAlive(RNN) = 255

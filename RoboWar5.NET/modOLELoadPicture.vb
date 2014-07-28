@@ -26,17 +26,17 @@ Module mOLELoadPicture
 	
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
 	'UPGRADE_WARNING: Structure CBoolean may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
-	Private Declare Function CreateStreamOnHGlobal Lib "ole32" (ByVal hGlobal As Integer, ByVal fDeleteOnRelease As CBoolean, ByRef ppstm As Any) As Integer
+    Private Declare Function CreateStreamOnHGlobal Lib "ole32" (ByVal hGlobal As Integer, ByVal fDeleteOnRelease As CBoolean, ByRef ppstm As Byte) As Integer
 	
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
 	'UPGRADE_WARNING: Structure GUID may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
 	'UPGRADE_WARNING: Structure CBoolean may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function OleLoadPicture Lib "olepro32" (ByRef pStream As Any, ByVal lSize As Integer, ByVal fRunmode As CBoolean, ByRef riid As GUID, ByRef ppvObj As Any) As Integer
+    Private Declare Function OleLoadPicture Lib "olepro32" (ByRef pStream As Byte, ByVal lSize As Integer, ByVal fRunmode As CBoolean, ByRef riid As GUID, ByRef ppvObj As Byte) As Integer
 	
 	'UPGRADE_WARNING: Structure GUID may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function CLSIDFromString Lib "ole32" (ByVal lpsz As Any, ByRef pclsid As GUID) As Integer
+    Private Declare Function CLSIDFromString Lib "ole32" (ByVal lpsz As Byte, ByRef pclsid As GUID) As Integer
 	
 	Private Declare Function GlobalAlloc Lib "kernel32" (ByVal uFlags As Integer, ByVal dwBytes As Integer) As Integer
 	
@@ -48,7 +48,7 @@ Module mOLELoadPicture
 	
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Sub CopyMemory Lib "kernel32"  Alias "RtlMoveMemory"(ByRef Destination As Any, ByRef Source As Any, ByVal Length As Integer)
+    Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (ByRef Destination As Byte, ByRef Source As Byte, ByVal Length As Integer)
 	
 	
 	
@@ -115,7 +115,7 @@ Module mOLELoadPicture
 		Dim lpMem As Integer 'long pointer to allocated memory
 		'UPGRADE_WARNING: Arrays in structure CLSID_IPicture may need to be initialized before they can be used. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="814DF224-76BD-4BB4-BFFB-EA359CB9FC48"'
 		Dim CLSID_IPicture As GUID 'Class Identifier for IPicture
-		Dim oIStream As stdole.IUnknown 'IStream Oject
+        Dim oIStream As Byte 'stdole.IUnknown 'IStream Oject
 		
 		'get data size
 		lSize = Len(sData)

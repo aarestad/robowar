@@ -108,27 +108,27 @@ Module PasteIco
 		Dim idEntries As ICONDIRENTRY 'array follows.
 	End Structure
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function GetBitmapBits Lib "gdi32" (ByVal hBitmap As Integer, ByVal dwCount As Integer, ByRef lpBits As Any) As Integer
+    Public Declare Function GetBitmapBits Lib "gdi32" (ByVal hBitmap As Integer, ByVal dwCount As Integer, ByRef lpBits As Byte) As Integer
 	'UPGRADE_NOTE: GetObject was upgraded to GetObject_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function GetObject_Renamed Lib "gdi32"  Alias "GetObjectA"(ByVal hObject As Integer, ByVal nCount As Integer, ByRef lpObject As Any) As Integer
+    Public Declare Function GetObject_Renamed Lib "gdi32" Alias "GetObjectA" (ByVal hObject As Integer, ByVal nCount As Integer, ByRef lpObject As Byte) As Integer
 	Public Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Integer, ByVal nWidth As Integer, ByVal nHeight As Integer) As Integer
 	Public Declare Function GetDC Lib "user32" (ByVal hwnd As Integer) As Integer
 	Public Declare Function DeleteDC Lib "gdi32" (ByVal hdc As Integer) As Integer
 	Public Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As Integer) As Integer
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function GetDIBits Lib "gdi32" (ByVal aHDC As Integer, ByVal hBitmap As Integer, ByVal nStartScan As Integer, ByVal nNumScans As Integer, ByRef lpBits As Any, ByRef lpBI As Any, ByVal wUsage As Integer) As Integer
+    Public Declare Function GetDIBits Lib "gdi32" (ByVal aHDC As Integer, ByVal hBitmap As Integer, ByVal nStartScan As Integer, ByVal nNumScans As Integer, ByRef lpBits As Byte, ByRef lpBI As BITMAPINFO1Bit, ByVal wUsage As Integer) As Integer
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function CreateBitmap Lib "gdi32" (ByVal nWidth As Integer, ByVal nHeight As Integer, ByVal nPlanes As Integer, ByVal nBitCount As Integer, ByRef lpBits As Any) As Integer
+    Public Declare Function CreateBitmap Lib "gdi32" (ByVal nWidth As Integer, ByVal nHeight As Integer, ByVal nPlanes As Integer, ByVal nBitCount As Integer, ByRef lpBits As Byte) As Integer
 	'UPGRADE_WARNING: Structure RECT may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
 	Public Declare Function InvertRect Lib "user32" (ByVal hdc As Integer, ByRef lpRect As RECT) As Integer
 	Public Declare Function SetBkColor Lib "gdi32" (ByVal hdc As Integer, ByVal crColor As Integer) As Integer
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Sub CopyMemory Lib "kernel32"  Alias "RtlMoveMemory"(ByRef pDst As Any, ByRef pSrc As Any, ByVal ByteLen As Integer)
+    Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (ByRef pDst As Byte, ByRef pSrc As Byte, ByVal ByteLen As Integer)
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function CreateDIBSection Lib "gdi32" (ByVal hdc As Integer, ByRef pBitmapInfo As Any, ByVal un As Integer, ByVal lplpVoid As Integer, ByVal handle As Integer, ByVal dw As Integer) As Integer
+    Public Declare Function CreateDIBSection Lib "gdi32" (ByVal hdc As Integer, ByRef pBitmapInfo As BITMAPINFO24Bit, ByVal un As Integer, ByVal lplpVoid As Integer, ByVal handle As Integer, ByVal dw As Integer) As Integer
 	Public Declare Function SelectObject Lib "gdi32" (ByVal hdc As Integer, ByVal hObject As Integer) As Integer
 	Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Integer, ByVal X As Integer, ByVal Y As Integer, ByVal nWidth As Integer, ByVal nHeight As Integer, ByVal hSrcDC As Integer, ByVal xSrc As Integer, ByVal ySrc As Integer, ByVal dwRop As Integer) As Integer
 	Public Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Integer) As Integer
@@ -139,7 +139,7 @@ Module PasteIco
 	Public Declare Function FillRect Lib "user32" (ByVal hdc As Integer, ByRef lpRect As RECT, ByVal hBrush As Integer) As Integer
 	'UPGRADE_WARNING: Structure BITMAPINFO may require marshalling attributes to be passed as an argument in this Declare statement. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="C429C3A5-5D47-4CD9-8F51-74A1616405DC"'
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function SetDIBitsToDevice Lib "gdi32" (ByVal hdc As Integer, ByVal X As Integer, ByVal Y As Integer, ByVal dx As Integer, ByVal dy As Integer, ByVal SrcX As Integer, ByVal SrcY As Integer, ByVal Scan As Integer, ByVal NumScans As Integer, ByRef Bits As Any, ByRef BitsInfo As BITMAPINFO, ByVal wUsage As Integer) As Integer
+    Public Declare Function SetDIBitsToDevice Lib "gdi32" (ByVal hdc As Integer, ByVal X As Integer, ByVal Y As Integer, ByVal dx As Integer, ByVal dy As Integer, ByVal SrcX As Integer, ByVal SrcY As Integer, ByVal Scan As Integer, ByVal NumScans As Integer, ByRef Bits As Byte, ByRef BitsInfo As BITMAPINFO, ByVal wUsage As Integer) As Integer
 	
 	Public Const BI_RGB As Short = 0
 	Public Const DIB_RGB_COLORS As Short = 0
@@ -215,7 +215,7 @@ Module PasteIco
 		'UPGRADE_WARNING: Arrays in structure IconInfo may need to be initialized before they can be used. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="814DF224-76BD-4BB4-BFFB-EA359CB9FC48"'
 		'UPGRADE_WARNING: Arrays in structure MaskInfo may need to be initialized before they can be used. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="814DF224-76BD-4BB4-BFFB-EA359CB9FC48"'
 		Dim fID As ICONDIR
-		Dim MaskInfo As BITMAPINFO1Bit
+        Dim MaskInfo As BITMAPINFO1Bit
 		Dim IconInfo As BITMAPINFO4Bit
 		Dim nMaskDC, nMaskBitmap As Integer ', bBits(0 To 3071) As Byte ', MaskBits(0 To 127) As Byte
 		Dim IconPal(255) As RGBQUAD
@@ -270,7 +270,7 @@ Module PasteIco
 		AndBitmap = CreateDIBSection(hSrcDC, bi24BitInfo, DIB_RGB_COLORS, 0, 0, 0)
 		If SelectObject(AndDC, AndBitmap) = 0 Then Exit Function
 		'UPGRADE_ISSUE: Constant vbSrcCopy was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
-		BitBlt(AndDC, 0, 0, lWidth, lHeight, hSrcDC, X, Y, vbSrcCopy)
+        BitBlt(AndDC, 0, 0, lWidth, lHeight, hSrcDC, X, Y, vbSrcCopy)
 		'UPGRADE_ISSUE: Constant vbSrcCopy was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
 		BitBlt(CopyDC, 0, 0, lWidth, lHeight, hBackDC, 0, 0, vbSrcCopy)
 		'UPGRADE_ISSUE: Constant vbSrcAnd was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'

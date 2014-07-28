@@ -9,7 +9,7 @@ Friend Class DraftingBoard
 	Private Declare Function RoboTranslate Lib "roboc.dll" (ByVal RoboTalkCodePtr As String, ByVal cCodePtr As String) As Integer
 	Const EM_LINEINDEX As Integer = &HBB
 	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Private Declare Function SendMessage Lib "user32"  Alias "SendMessageA"(ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Any) As Integer
+    Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
 	
 	'From Arena, when robot bugs
 	Public GotoInstNr As Short
@@ -1293,11 +1293,11 @@ AbortCreation:
 	
 	Public Sub Find_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Find.Click
 		sFind = InputBox("Search for", "Find", Trim(RobotCode.SelectedText))
-		If RobotCode.Find(sFind, RobotCode.SelectionStart + RobotCode.SelectionLength + 1) = -1 Then RobotCode.Find(sFind, 0) ', RobotCode.SelStart + RobotCode.SelLength + 1
+        'If RobotCode.Find(sFind, RobotCode.SelectionStart + RobotCode.SelectionLength + 1) = -1 Then RobotCode.Find(sFind, 0) ', RobotCode.SelStart + RobotCode.SelLength + 1
 	End Sub
 	
 	Public Sub FindNext_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles FindNext.Click
-		If RobotCode.Find(sFind, RobotCode.SelectionStart + RobotCode.SelectionLength + 1) = -1 Then RobotCode.Find(sFind, 0) ', RobotCode.SelStart + RobotCode.SelLength + 1
+        'If RobotCode.Find(sFind, RobotCode.SelectionStart + RobotCode.SelectionLength + 1) = -1 Then RobotCode.Find(sFind, 0) ', RobotCode.SelStart + RobotCode.SelLength + 1
 	End Sub
 	
 	Private Sub SearchInst(ByRef lookingfor As Short)
@@ -1520,20 +1520,18 @@ Retry:
 		'UPGRADE_WARNING: Get was upgraded to FileGet and has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
 		FileGet(1, rcode, Cstart)
 		If SyntaxColoringCache Then
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, vbNewLine) <> 0 Then rcode = Replace09(rcode, vbNewLine, vbCr) 'DISK - verkar motverka hålen
+            If InStr(rcode, vbNewLine) <> 0 Then rcode = Replace09(rcode, vbNewLine, vbCr) 'DISK - verkar motverka hålen
 			'Troligen rör det sig om chr(128-159)
 			
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, Chr(133)) <> 0 Then rcode = Replace09(rcode, Chr(133), "") 'DISK - verkar motverka hålen
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, Chr(132)) <> 0 Then rcode = Replace09(rcode, Chr(132), "") 'DISK - verkar motverka hålen
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, Chr(154)) <> 0 Then rcode = Replace09(rcode, Chr(154), "") 'DISK - verkar motverka hålen
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, Chr(140)) <> 0 Then rcode = Replace09(rcode, Chr(140), "") 'DISK - verkar motverka hålen
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(rcode, Chr(138)) <> 0 Then rcode = Replace09(rcode, Chr(138), "") 'DISK - verkar motverka hålen
+            If InStr(rcode, Chr(133)) <> 0 Then rcode = Replace09(rcode, Chr(133), "") 'DISK - verkar motverka hålen
+
+            If InStr(rcode, Chr(132)) <> 0 Then rcode = Replace09(rcode, Chr(132), "") 'DISK - verkar motverka hålen
+
+            If InStr(rcode, Chr(154)) <> 0 Then rcode = Replace09(rcode, Chr(154), "") 'DISK - verkar motverka hålen
+
+            If InStr(rcode, Chr(140)) <> 0 Then rcode = Replace09(rcode, Chr(140), "") 'DISK - verkar motverka hålen
+
+            If InStr(rcode, Chr(138)) <> 0 Then rcode = Replace09(rcode, Chr(138), "") 'DISK - verkar motverka hålen
 			rcode = rcode & vbCr 'DISK
 		End If
 		
@@ -1731,17 +1729,16 @@ AbortCreation:
 	End Sub
 	
 	Public Sub Print_Renamed_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Print_Renamed.Click
-		Dim Printer As New Printer
 		CommonDialog1Print.ShowDialog()
 		CommonDialog1Font.MaxSize = CommonDialog1Print.PrinterSettings.MaximumPage
 		CommonDialog1Font.MinSize = CommonDialog1Print.PrinterSettings.MinimumPage
 		On Error GoTo printererror
 		
-		Printer.Orientation = CommonDialog1Print.PrinterSettings.DefaultPageSettings.Landscape
-		Printer.Copies = CommonDialog1Print.PrinterSettings.Copies
+        'Printer.Orientation = CommonDialog1Print.PrinterSettings.DefaultPageSettings.Landscape
+        'Printer.Copies = CommonDialog1Print.PrinterSettings.Copies
 		'UPGRADE_ISSUE: Printer property Printer.hdc was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
 		'UPGRADE_ISSUE: RichTextLib.RichTextBox method RobotCode.SelPrint was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-		RobotCode.SelPrint((Printer.hdc))
+        'RobotCode.SelPrint((Printer.hdc))
 		'Exit Sub
 		
 printererror: 
@@ -1907,7 +1904,7 @@ Retry:
 	Public Sub Size_Renamed_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Size_Renamed.Click
 		'UPGRADE_ISSUE: Constant cdlCFScreenFonts was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
 		'UPGRADE_ISSUE: MSComDlg.CommonDialog property CommonDialog1.Flags was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-		CommonDialog1.Flags = MSComDlg.FontsConstants.cdlCFScreenFonts
+        'CommonDialog1.Flags = MSComDlg.FontsConstants.cdlCFScreenFonts
 		'UPGRADE_WARNING: MSComDlg.CommonDialog property CommonDialog1.Flags was upgraded to CommonDialog1Font.ShowEffects which has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="DFCDE711-9694-47D7-9C50-45A99CD8E91E"'
 		CommonDialog1Font.ShowEffects = True
 		'UPGRADE_WARNING: MSComDlg.CommonDialog property CommonDialog1.Flags was upgraded to CommonDialog1Font.FontMustExist which has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="DFCDE711-9694-47D7-9C50-45A99CD8E91E"'
@@ -1916,7 +1913,7 @@ Retry:
 		CommonDialog1Font.ScriptsOnly = True
 		'UPGRADE_ISSUE: Constant cdlCFLimitSize was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
 		'UPGRADE_ISSUE: MSComDlg.CommonDialog property CommonDialog1.Flags was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-		CommonDialog1.Flags = MSComDlg.FontsConstants.cdlCFLimitSize
+        'CommonDialog1.Flags = MSComDlg.FontsConstants.cdlCFLimitSize
 		CommonDialog1Font.MinSize = 3
 		CommonDialog1Print.PrinterSettings.MinimumPage = 3
 		CommonDialog1Font.MaxSize = 24
@@ -1992,7 +1989,7 @@ Retry:
 						If InStr(TheLabelCollection, " " & TheCodeA(counter)) Then
 							MsgBox("Duplic label.",  , "Bug Alert!")
 							RobotCode.Focus()
-							RobotCode.Find(TheCodeA(counter), InStr(LCase(RobotCode.Text), TheCodeA(counter)))
+                            'RobotCode.Find(TheCodeA(counter), InStr(LCase(RobotCode.Text), TheCodeA(counter)))
 							SyntaxCheck = True
 							Exit Function
 						Else
@@ -2210,13 +2207,13 @@ Retry:
 		FileGet(1, RobotDrones, DroneRec)
 		If RobotDrones <> 0 Then 'If drones are 1 or 2
 			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(StrMachineCode, "DRONE'") = 0 Then 'If it have drones equiped but do not use them
-				'UPGRADE_WARNING: Put was upgraded to FilePut and has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-				FilePut(1, CByte(2), DroneRec)
-			ElseIf RobotDrones = 2 Then  'If drones are used but wrongfully registred as not being used
-				'UPGRADE_WARNING: Put was upgraded to FilePut and has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-				FilePut(1, CByte(1), DroneRec)
-			End If
+            If InStr(StrMachineCode, "DRONE'") = 0 Then 'If it have drones equiped but do not use them
+                'UPGRADE_WARNING: Put was upgraded to FilePut and has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+                FilePut(1, CByte(2), DroneRec)
+            ElseIf RobotDrones = 2 Then  'If drones are used but wrongfully registred as not being used
+                'UPGRADE_WARNING: Put was upgraded to FilePut and has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+                FilePut(1, CByte(1), DroneRec)
+            End If
 		End If
 		
 		'Get #1, DroneRec, RobotDrones 'DEBUG!!!
@@ -2247,16 +2244,14 @@ Retry:
 		
 		RoboTalkCodeBuffer = RTrim(RoboTalkCodeBuffer)
 		
-		'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		If LenB(RoboTalkCodeBuffer) > 0 Then
-			SkipNum = Asc(VB.Right(RoboTalkCodeBuffer, 1))
-			Do Until SkipNum <> 10 And SkipNum <> 13 And SkipNum <> 0 And SkipNum <> 32
-				RoboTalkCodeBuffer = VB.Left(RoboTalkCodeBuffer, Len(RoboTalkCodeBuffer) - 1)
-				'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-				If LenB(RoboTalkCodeBuffer) = 0 Then Exit Do
-				SkipNum = Asc(VB.Right(RoboTalkCodeBuffer, 1))
-			Loop 
-		End If
+        If Len(RoboTalkCodeBuffer) > 0 Then
+            SkipNum = Asc(VB.Right(RoboTalkCodeBuffer, 1))
+            Do Until SkipNum <> 10 And SkipNum <> 13 And SkipNum <> 0 And SkipNum <> 32
+                RoboTalkCodeBuffer = VB.Left(RoboTalkCodeBuffer, Len(RoboTalkCodeBuffer) - 1)
+                If Len(RoboTalkCodeBuffer) = 0 Then Exit Do
+                SkipNum = Asc(VB.Right(RoboTalkCodeBuffer, 1))
+            Loop
+        End If
 		
 		C2RoboTalk = RoboTalkCodeBuffer
 	End Function
@@ -2296,10 +2291,9 @@ Retry:
 		Next counter
 		
 		' #-COMMENTS
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, vbLf) <> 0
-			Stage1Code = Replace09(Stage1Code, vbLf, vbCr) 'Behövs för stjärnkommentarborttagaren om användaren skulle råkat fått in vblf
-		Loop 
+        Do While InStr(Stage1Code, vbLf) <> 0
+            Stage1Code = Replace09(Stage1Code, vbLf, vbCr) 'Behövs för stjärnkommentarborttagaren om användaren skulle råkat fått in vblf
+        Loop
 		
 		counter = InStr(Stage1Code, "#")
 		Do While counter <> 0
@@ -2308,26 +2302,26 @@ Retry:
 		Loop 
 		
 		' DELIMINERS
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, vbTab) <> 0
-			Stage1Code = Replace09(Stage1Code, vbTab, vbCr)
-		Loop 
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, ";") <> 0
-			Stage1Code = Replace09(Stage1Code, ";", vbCr)
-		Loop 
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, ",") <> 0
-			Stage1Code = Replace09(Stage1Code, ",", vbCr)
-		Loop 
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, vbCr) <> 0
-			Stage1Code = Replace09(Stage1Code, vbCr, " ")
-		Loop 
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, "  ") <> 0
-			Stage1Code = Replace09(Stage1Code, "  ", " ")
-		Loop 
+
+        Do While InStr(Stage1Code, vbTab) <> 0
+            Stage1Code = Replace09(Stage1Code, vbTab, vbCr)
+        Loop
+
+        Do While InStr(Stage1Code, ";") <> 0
+            Stage1Code = Replace09(Stage1Code, ";", vbCr)
+        Loop
+
+        Do While InStr(Stage1Code, ",") <> 0
+            Stage1Code = Replace09(Stage1Code, ",", vbCr)
+        Loop
+
+        Do While InStr(Stage1Code, vbCr) <> 0
+            Stage1Code = Replace09(Stage1Code, vbCr, " ")
+        Loop
+
+        Do While InStr(Stage1Code, "  ") <> 0
+            Stage1Code = Replace09(Stage1Code, "  ", " ")
+        Loop
 		
 		' RECALLS + STO -> STORE and many others as well
 		' Recalls must be added before we do the labels, otherwise the labels will get wrong numbers
@@ -2537,18 +2531,18 @@ Retry:
 		
 		For counter = 0 To UBound(splitcode)
 			Instructionn = splitcode(counter)
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			If InStrB(Instructionn, ":") <> 0 Then 'Checks if there's ":" in the instruction. If there is it's a label definition
-				SkipNum = SkipNum + 1 'If it is then
-				If SkipNum > 399 Then
-					MsgBox("Your robot's code exceedes 400 labels. Please reduce the number of labels.",  , "Compiling Error")
-					Compile = "END"
-					Exit Function
-				End If
-				LP(SkipNum) = counter - SkipNum - 2 'Records which inst. nr. the label corresponds to
-				LN(SkipNum) = Replace09(Instructionn, ":", "") 'Records the name of the label
-				splitcode(counter) = "" 'Removes the label definition from the code
-			End If
+
+            If InStr(Instructionn, ":") <> 0 Then 'Checks if there's ":" in the instruction. If there is it's a label definition
+                SkipNum = SkipNum + 1 'If it is then
+                If SkipNum > 399 Then
+                    MsgBox("Your robot's code exceedes 400 labels. Please reduce the number of labels.", , "Compiling Error")
+                    Compile = "END"
+                    Exit Function
+                End If
+                LP(SkipNum) = counter - SkipNum - 2 'Records which inst. nr. the label corresponds to
+                LN(SkipNum) = Replace09(Instructionn, ":", "") 'Records the name of the label
+                splitcode(counter) = "" 'Removes the label definition from the code
+            End If
 		Next counter
 		
 		For SkipNum = 0 To SkipNum 'Replaces labels with instruction numbers. This is the major reason why the compiler is so sluggish
@@ -2564,10 +2558,10 @@ Retry:
 			Stage1Code = VB.Right(Stage1Code, Len(Stage1Code) - 1)
 		Loop 
 		
-		'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		Do While InStrB(Stage1Code, vbCr & vbCr) <> 0 'removed double vbCr created from the label recorder
-			Stage1Code = Replace09(Stage1Code, vbCr & vbCr, vbCr)
-		Loop 
+
+        Do While InStr(Stage1Code, vbCr & vbCr) <> 0 'removed double vbCr created from the label recorder
+            Stage1Code = Replace09(Stage1Code, vbCr & vbCr, vbCr)
+        Loop
 		
 		If Stage1Code <> "" Then
 			Stage1Code = VB.Left(Stage1Code, Len(Stage1Code) - 1)
@@ -2913,18 +2907,17 @@ CompilingError1:
 	Private Function Replace09(ByRef Text_Renamed As String, ByRef sOld As String, ByRef sNew As String, Optional ByVal start As Integer = 1, Optional ByVal Count As Integer = 2147483647, Optional ByVal Compare As CompareMethod = CompareMethod.Binary) As String
 		' by Jost Schwider, jost@schwider.de, 20001218
 		
-		'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		If LenB(sOld) Then
-			
-			If Compare = CompareMethod.Binary Then
-				Replace09Bin(Replace09, Text_Renamed, Text_Renamed, sOld, sNew, start, Count)
-			Else
-				Replace09Bin(Replace09, Text_Renamed, LCase(Text_Renamed), LCase(sOld), sNew, start, Count)
-			End If
-			
-		Else 'Suchstring ist leer:
-			Replace09 = Text_Renamed
-		End If
+        If Len(sOld) Then
+
+            If Compare = CompareMethod.Binary Then
+                Replace09Bin(Replace09, Text_Renamed, Text_Renamed, sOld, sNew, start, Count)
+            Else
+                Replace09Bin(Replace09, Text_Renamed, LCase(Text_Renamed), LCase(sOld), sNew, start, Count)
+            End If
+
+        Else 'Suchstring ist leer:
+            Replace09 = Text_Renamed
+        End If
 	End Function
 	
 	'UPGRADE_NOTE: Text was upgraded to Text_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
@@ -2943,27 +2936,21 @@ CompilingError1:
 		
 		'Ersten Treffer bestimmen:
 		If start < 2 Then
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			start = InStrB(Search, sOld)
+            start = InStr(Search, sOld)
 		Else
-			'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			start = InStrB(start + start - 1, Search, sOld)
+            start = InStr(start + start - 1, Search, sOld)
 		End If
 		If start Then
 			
-			'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			OldLen = LenB(sOld)
-			'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-			NewLen = LenB(sNew)
+            OldLen = Len(sOld)
+            NewLen = Len(sNew)
 			Select Case NewLen
 				Case OldLen 'einfaches Überschreiben:
 					
 					result = Text_Renamed
 					For Count = 1 To Count
-						'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						MidB(result, start) = sNew
-						'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						start = InStrB(start + OldLen, Search, sOld)
+                        Mid(result, start) = sNew
+                        start = InStr(start + OldLen, Search, sOld)
 						If start = 0 Then Exit Sub
 					Next Count
 					Exit Sub
@@ -2971,8 +2958,7 @@ CompilingError1:
 				Case Is < OldLen 'Ergebnis wird kürzer:
 					
 					'Buffer initialisieren:
-					'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-					TextLen = LenB(Text_Renamed)
+                    TextLen = Len(Text_Renamed)
 					If TextLen > BufferLen Then
 						Buffer = Text_Renamed
 						BufferLen = TextLen
@@ -2985,23 +2971,20 @@ CompilingError1:
 						
 						'Einzufügenden Text beachten:
 						For Count = 1 To Count
-							CopyLen = start - ReadPos
+                            CopyLen = start - ReadPos
+
 							If CopyLen Then
 								BufferPosNew = WritePos + CopyLen
-								'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								MidB(Buffer, WritePos) = MidB$(Text_Renamed, ReadPos, CopyLen)
-								'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								MidB(Buffer, BufferPosNew) = sNew
+                                Mid(Buffer, WritePos) = Mid(Text_Renamed, ReadPos, CopyLen)
+                                Mid(Buffer, BufferPosNew) = sNew
 								WritePos = BufferPosNew + NewLen
 							Else
-								'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								MidB(Buffer, WritePos) = sNew
+                                Mid(Buffer, WritePos) = sNew
 								WritePos = WritePos + NewLen
-							End If
+                            End If
+
 							ReadPos = start + OldLen
-							'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							start = InStrB(ReadPos, Search, sOld)
+                            start = InStr(ReadPos, Search, sOld)
 							If start = 0 Then Exit For
 						Next Count
 						
@@ -3013,12 +2996,12 @@ CompilingError1:
 							If CopyLen Then
 								'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 								'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								MidB(Buffer, WritePos) = MidB$(Text_Renamed, ReadPos, CopyLen)
+                                Mid(Buffer, WritePos) = Mid(Text_Renamed, ReadPos, CopyLen)
 								WritePos = WritePos + CopyLen
 							End If
 							ReadPos = start + OldLen
 							'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							start = InStrB(ReadPos, Search, sOld)
+                            start = InStr(ReadPos, Search, sOld)
 							If start = 0 Then Exit For
 						Next Count
 						
@@ -3027,14 +3010,14 @@ CompilingError1:
 					'Ergebnis zusammenbauen:
 					If ReadPos > TextLen Then
 						'UPGRADE_ISSUE: LeftB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						result = LeftB$(Buffer, WritePos - 1)
+                        result = Left(Buffer, WritePos - 1)
 					Else
 						'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 						'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						MidB(Buffer, WritePos) = MidB$(Text_Renamed, ReadPos)
+                        Mid(Buffer, WritePos) = Mid(Text_Renamed, ReadPos)
 						'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 						'UPGRADE_ISSUE: LeftB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						result = LeftB$(Buffer, WritePos + LenB(Text_Renamed) - ReadPos)
+                        result = Left(Buffer, WritePos + Len(Text_Renamed) - ReadPos)
 					End If
 					Exit Sub
 					
@@ -3042,12 +3025,12 @@ CompilingError1:
 					
 					'Buffer initialisieren:
 					'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-					TextLen = LenB(Text_Renamed)
+                    TextLen = Len(Text_Renamed)
 					BufferPosNew = TextLen + NewLen
 					If BufferPosNew > BufferLen Then
 						Buffer = Space(BufferPosNew)
 						'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						BufferLen = LenB(Buffer)
+                        BufferLen = Len(Buffer)
 					End If
 					
 					'Ersetzung:
@@ -3064,15 +3047,15 @@ CompilingError1:
 							If BufferPosNext > BufferLen Then
 								Buffer = Buffer & Space(BufferPosNext)
 								'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								BufferLen = LenB(Buffer)
+                                BufferLen = Len(Buffer)
 							End If
 							
 							'String "patchen":
 							'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 							'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							MidB(Buffer, WritePos) = MidB$(Text_Renamed, ReadPos, CopyLen)
+                            Mid(Buffer, WritePos) = Mid(Text_Renamed, ReadPos, CopyLen)
 							'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							MidB(Buffer, BufferPosNew) = sNew
+                            Mid(Buffer, BufferPosNew) = sNew
 						Else
 							'Position bestimmen:
 							BufferPosNext = WritePos + NewLen
@@ -3081,36 +3064,36 @@ CompilingError1:
 							If BufferPosNext > BufferLen Then
 								Buffer = Buffer & Space(BufferPosNext)
 								'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-								BufferLen = LenB(Buffer)
+                                BufferLen = Len(Buffer)
 							End If
 							
 							'String "patchen":
 							'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							MidB(Buffer, WritePos) = sNew
+                            Mid(Buffer, WritePos) = sNew
 						End If
 						WritePos = BufferPosNext
 						ReadPos = start + OldLen
 						'UPGRADE_ISSUE: InStrB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						start = InStrB(ReadPos, Search, sOld)
+                        start = InStr(ReadPos, Search, sOld)
 						If start = 0 Then Exit For
 					Next Count
 					
 					'Ergebnis zusammenbauen:
 					If ReadPos > TextLen Then
 						'UPGRADE_ISSUE: LeftB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-						result = LeftB$(Buffer, WritePos - 1)
+                        result = Left(Buffer, WritePos - 1)
 					Else
 						BufferPosNext = WritePos + TextLen - ReadPos
 						If BufferPosNext < BufferLen Then
 							'UPGRADE_ISSUE: MidB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 							'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							MidB(Buffer, WritePos) = MidB$(Text_Renamed, ReadPos)
+                            Mid(Buffer, WritePos) = Mid(Text_Renamed, ReadPos)
 							'UPGRADE_ISSUE: LeftB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							result = LeftB$(Buffer, BufferPosNext)
+                            result = Left(Buffer, BufferPosNext)
 						Else
 							'UPGRADE_ISSUE: MidB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
 							'UPGRADE_ISSUE: LeftB$ function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-							result = LeftB$(Buffer, WritePos - 1) & MidB$(Text_Renamed, ReadPos)
+                            result = Left(Buffer, WritePos - 1) & Mid(Text_Renamed, ReadPos)
 						End If
 					End If
 					Exit Sub
@@ -3128,9 +3111,9 @@ CompilingError1:
 		Dim Results() As Integer
 		
 		'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		SLen = LenB(Expression) \ 2
+        SLen = Len(Expression) \ 2
 		'UPGRADE_ISSUE: LenB function is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="367764E5-F3F8-4E43-AC3E-7FE0B5E074E2"'
-		DelLen = LenB(Delimiter) \ 2
+        DelLen = Len(Delimiter) \ 2
 		
 		' Bail if we were passed an empty delimiter or an empty expression
 		If SLen = 0 Or DelLen = 0 Then
