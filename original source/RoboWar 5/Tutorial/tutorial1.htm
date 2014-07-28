@@ -1,0 +1,316 @@
+<html>
+<body onUnload="spawntopfivewindow();" 
+ link=green vlink=green bgcolor=white>
+<center>
+
+<font size=7>
+<p>BASICS</p>
+
+</center>
+
+
+<font size=2><p>
+
+Welcome to <a href=mailto:bartons@mcn.net>my</a> (Austin Barton's, <B>not</B> Kevin Hertzberg's) tutorial on how to program
+a robot for Robowar. If you have any questions that are unanswered on 
+my Robowar page please go to the <b>HELP</b> section.<hr><p>
+<a name=#create>
+<font color=blue>Creating A Robot<font color=black><br>
+
+Here are the instructions to create a robot:<p>
+
+<li>Open Robowar
+<li>Select <b>File</b> > <b>New</b>
+<li>Type in a name for your robot
+<li>Select the directory you wish to save the robot in
+<li>Click Save<p>
+
+You have your robot now for the programming. To program this robot you must
+open the drafting board which is located under VIEW. The typing area is
+basically the heart of your robot. Except now it is empty. Everytime you
+make a change to your robot remember to compile it or it won't notice.
+Compile is found under VIEW.<hr><p>
+
+</font></font>
+<font color=blue><font color=black>
+
+<a name=labels>
+
+<font color=blue>Labels<font color=black><br>
+
+To create a robot you must have labels. There is no way around not using
+them. Labels are used to jump to different parts of the program. To define
+a label it must always be followed by a colon (:) and when directing the
+program to a label ommit the colon. When using a label make sure you 
+use a name that Robowar doesn't use and usually something to help you 
+remember what that label is for. Here are bad label names:<p>
+
+<li>Fire: 
+<li>Jump:
+<li>4356: 
+<p>
+
+The first two, Robowar reserves. The last one leaves no clue as to where it
+will take us. But if thats how you want to do it, go for it. Now for good 
+label names:<p>
+
+<li>GoingUp:
+<li>ISeeRobot:
+<li>SoloMode:
+<p>
+
+A few pointers. You can't use the same label name twice in a program. However
+you can jump to a label as much as you want. Labels can't be over...I believe
+20 characters long.<hr><p>
+
+</font></font>
+
+<font color=blue><font color=black>
+
+<a name=return>
+
+<font color=blue>If & IFG Statement, Return, &  Jump<font color=black><br>
+The IF & IFG statements are absolutely neccesary if you are to ever program 
+a "good" robot. There are used basically to check two or more numbers. Here
+is the setup of a IF or IFG statement.<br>
+<center><b> Number1 Number2 Operator Label IF or IFG</b></center><br>
+And some examples:<p>
+
+<li> 5 3 > YesItIs If
+<li> x y = LetsKillEm Ifg
+<li> range radar ! DieDieDie If
+<p>
+
+If the statement is true then it goes to the desired label if not it continues
+on with the program. So on the first example we have <b>IF 5 > 3 GOTO YesItIs</b>
+That is true so the program would go to the label YesItIs. The second one,
+<b>IF X = Y THEN GOTO LetsKillEm</b> On this one we don't know what x or y 
+equals but variables can be used. On the third one ! stands for does not 
+equal. <p>
+
+Now to know the difference between IF and IFG. When jumping to a label from
+an IF statement it leaves an address so that later on we can go back to where
+it came from. And with an IFG statement it leaves no address so later in the
+future we couldn't go back to where it came from. That may sound confusing 
+but the example robots should help you figure it out. When using an IF 
+statement to return back we simply use a command called <font color=blue>
+Return<font color=black>. With IFG we would use the <font color=blue>Jump
+<font color=black> command. Here are two example robots using all we have
+learned:<p>
+
+<center>
+<table border=5 cellborder=1 cellspacing=6>
+<tr>
+<td><font size=5>Example Bot Using If<font size=2>....</font></font><font size=2><a name="return" href="files/If.RWR">Open</a></td>
+<td><font size=5>Example Bot Using Ifg<font size=2>....</font></font><font size=2><a name="return" href="files/Ifg.RWR">Open</a></td>
+</tr>
+<tr>
+<td>
+
+Main:<br>
+5 3 > YesItIs If<br>
+Main jump<p>
+
+YesItIs:<br>
+#5 is apperently over 3<br>
+return<br>
+
+</td>
+<td>
+
+Main:<br>
+5 3 > YesItIs Ifg<br>
+Main jump<p>
+
+YesItIs:<br>
+#5 is apperently over 3<br>
+Main jump<br>
+</td></tr></table></center><p>
+
+These two robots do virtually nothing. Both loop meaning they keep running
+the code between Main and Main jump checking if 5 is over 3. When it is
+it goes to YesItIs. The # is used to put remarks in. These are usually to
+help you remember something or to comment. Don't worry we'll make a robot that
+will battle soon enough.<hr><p>
+
+</font></font></font></font></font></font>
+
+<font color=blue><font color=black> <font color=blue>
+<font color=black> <font color=blue>
+<font color=black> 
+
+<a name=operat>
+
+<font color=blue>Plus, Minus, Divide, and Multiply (+ - / *)<font color=black><br>
+These are plus, minus, divide, and multiply. When doing math in robowar it is
+slightly different from what we know. For example this is how we do math:<p>
+
+<li>1 + 3
+<li>4 - 2
+<li>100 / 10
+<li>6 * 6<p>
+
+In Robowar this is how it is done:<p>
+
+<li>1 3 + 
+<li>4 2 -
+<li>100 10 /
+<li>6 6 *<p>
+
+In all these examples numbers are used. However variables can be used.
+If you would like here is a list of available </font></font>
+
+<font color=blue><font color=black> <a href=tutorial.var.html>variables</a> and their uses.
+
+<hr><p>
+
+<a name=missil>
+
+<font color=blue>Fire & Missile<font color=black><br>
+Fire and Missile are both used to shoot. There are three different types of
+bullets for the Fire command.<p>
+
+<li>Explosive
+<li>Normal
+<li>Rubber<p>
+
+To choose which type of bullet to use you must pick this in the hardware store.
+This is located under VIEW. When using Fire or Missile this is the format 
+in the way to do so:<p>
+<center><b>variable fire' sto</center>
+<center>variable missile' sto</center></b><p>
+
+Examples:<p>
+
+<li>1 fire' sto
+<li>15 missile' sto
+<li>energy bullet' sto<p>
+
+Your robot has an amount of energy. This energy is used by moving, using shields,
+or firing. On the first example one unit of energy is used to fire a bullet.
+If you have Explosive bullets the amount of energy used is multiplyed by
+two for the amount of damage it will deal. Normal bullets are as the energy
+used and rubber is half the amount of energy. Missiles always do twice the
+energy consumed but move at a much slower speed. On the third example all of
+your robots current energy will be used to fire a bullet. The <font color=blue>
+bullet<font color=black> is used when you have explosive bullets. When using
+this, instead of firing an explosive bullet you'll fire a normal bullet. This
+is used when a robot is close to the robot it is firing upon. With bullet there
+is no chance of being within the blast radius.<p>
+
+I believe now you should have learned enough information to create a robot
+that can do something.<p><hr>
+
+<table border=5 cellpadding=1 cellspacing=6 align=center>
+<tr><td><font size=5>Basic Robot<font size=2>....<a href=files/Basic.RWR>Open</a></td>
+<tr><td>
+Main:<br>
+range 0 > ShootEm if<br>
+aim 5 + aim' sto<br>
+Main jump<p>
+
+ShootEm:<br>
+10 fire' sto<br>
+return
+</td></tr>
+</table>
+
+<p><hr>
+
+If there are certain variables such as aim or range you don't understand
+check out </font></font></font></font>
+
+<font color=blue><font color=black> <font color=blue>
+<font color=black> <a href=tutorial.var.html>variables</a>. It lists the variables and
+their uses.<p>
+
+Now that you have made your first robot, its time to look at the hardware 
+store. There are different types of robots based on the points used in the
+hardware store. For now we'll be using 9 points which is considered a 
+Mortal robot. Here you can pick different weapons, damage, shields, energy,
+and speed. Here are two robots, both have the same code, but each have 
+different hardware settings. Take a look at each and try battling them against
+each other. <p>
+
+<center><a href=files/Basic.RWR>Open</a> Bot 1 vs. Bot 2 <a href=files/Basic2.RWR>Open</a></center>
+<p>
+
+Remeber both have the same code and the same amount of points but notice how
+much better one can kill the other. Hardware settings can make a world of
+difference on a robot. You should notice that Bot 2 wins everytime. So when
+creating a robot its best to use your hardware points wisely. I would suggest
+before you go on reading to try creating a few robots knowing what you should
+now know. <p>
+
+<li>A robot that fires different amounts of power based on its energy.
+<li>Try create a fast missile swarming bot.
+<li>Your own that can beat all of them!
+
+<p>
+
+You've made those bots above? If you haven't I suggest doing so because now 
+we're moving into something that really make your bot move. Have problems 
+making the bots above? Open em! <a href=files/Energy.RWR>Energy Based Bot
+</a> or <a href=files/Missile.RWR>Missile Swarmer</a>.<hr><p>
+
+<a name=speed>
+
+<span lang="en-us">
+
+<font color=blue>Speedx & Speedy<font color=black><br>
+Ready to make a bot move? You can do that using speedx and speedy. Speedx
+is the speedx your robot is going on the x axis. And speedy is of course the
+speed your robot is going on the y axis. For your information the arena is
+300 x 300 pixels. Need a </font></font>
+
+</span><font color=black> <span lang="en-us"> <a href=tutorial.diagram.html>diagram</a> of this?
+You set your speeds the same way you would to fire a missile or bullet.</span><p>
+
+<center><span lang="en-us"><b>variable speedx' sto</b></span></center>
+<center><span lang="en-us"><b>variable speedy' sto</b></span></center>
+<span lang="en-us"><br>
+
+You can check your area in the arena with a simple <a href=#return>IF</a> 
+or <a href=#return>IFG</a> statement. A few things about the two speeds:</span><p>
+
+<li><span lang="en-us">Once a speed is set it will stay that way until changed.
+</span>
+<li><span lang="en-us">The maximum speed in any direction (Up, Down, Left, or Right) is 20.
+</span>
+<li><span lang="en-us">To move it cost 2 times the speed. So a sitting bot that changes to 
+4 speedy would cost 8 energy. And if that same bot then changed to -4 speedy
+it would cost 16 energy.</span><p>
+
+<span lang="en-us">Here is an example of a simple robot which goes up and down while still 
+firing. I've decided you don't need to see my code anymore. But if you have 
+real bad problems you can <a href=files/UpDown.RWR>open</a> this bot. 
+Having problems killing those moving bots? Go to my shot 
+<a href=tutorial.leading.html>leading<a/> part of my tutorial.
+
+This here ends the basics of Robowar. Want to make a better bot? A bot able
+to think quicker? Able use your own icons and sounds for your robot?  
+<a href="PartII/Tutorial.htm">Read the  </a></span>  
+<a href="PartII/Tutorial.htm"><span lang="en-us">Next section of the Robowar tutorial</span></a><a/><span lang="en-us">.
+</span> <p><hr>
+
+If you find an error in this site or have a suggestion please 
+<a href=mailto:bartons@mcn.net>Email Me</a>.
+
+<script language="Javascript">
+<!--hide
+
+var my_clientip = '212.181.162.15';
+
+if (document.getElementById('userIP') != null) {               
+
+        document.getElementById('userIP').value = my_clientip;           
+}
+
+setonclickmethods();
+
+
+// -->   
+</script>
+
+</body>
+</html>

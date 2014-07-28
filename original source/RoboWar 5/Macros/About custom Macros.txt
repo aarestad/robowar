@@ -1,0 +1,15 @@
+{
+A macro is a code scrap that you'll use frequently.
+You can have 6 custom macros which will be accesible 
+though this menu. Here's how to add a macro:
+
+1. Create a text document containing the macro and give
+the text document an appropriate name. 
+
+2. Place the document in the folder called "Macros" in 
+the game's folder.
+
+You can now insert the code scrap just by clicking the 
+menu or using the F keys.
+
+}

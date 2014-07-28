@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Basic Express 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RoboWar 5", "RoboWar 5.vbproj", "{368BE661-7E9C-409E-9D91-0620BE0B4D9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{368BE661-7E9C-409E-9D91-0620BE0B4D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368BE661-7E9C-409E-9D91-0620BE0B4D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368BE661-7E9C-409E-9D91-0620BE0B4D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368BE661-7E9C-409E-9D91-0620BE0B4D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

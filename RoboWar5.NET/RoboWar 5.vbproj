@@ -1,0 +1,251 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <MyType>WindowsForms</MyType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{368BE661-7E9C-409E-9D91-0620BE0B4D9A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RoboWar5</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RoboWar5.RWOLpen</StartupObject>
+    <AssemblyMajorVersion>5</AssemblyMajorVersion>
+    <AssemblyMinorVersion>4</AssemblyMinorVersion>
+    <AssemblyRevisionNumber>0</AssemblyRevisionNumber>
+    <GenerateRevisionNumber>False</GenerateRevisionNumber>
+    <AssemblyCompanyName>Freeware</AssemblyCompanyName>
+    <StartWithIE>False</StartWithIE>
+    <ApplicationIcon>RoboWar 5.ico</ApplicationIcon>
+    <RootNamespace>RoboWar5</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>RoboWar5.xml</DocumentationFile>
+    <DebugSymbols>True</DebugSymbols>
+    <DefineDebug>True</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>RoboWar5.xml</DocumentationFile>
+    <DebugSymbols>False</DebugSymbols>
+    <DefineDebug>False</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.VS">
+      <Name>Microsoft.VisualBasic.PowerPacks.VS</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.XML">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutRoboWar.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>AboutRoboWar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutRoboWar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="ChangeResolution.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChooseIcon.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>ChooseIcon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseIcon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatingLog.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>CreatingLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreatingLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debugger.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>Debugger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Debugger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DraftingBoard.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>DraftingBoard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DraftingBoard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>Hardware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryWindow.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>HistoryWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modOLELoadPicture.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RectangleShapeArray.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RWOLpen.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>RWOLpen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RWOLpen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sounds.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>Sounds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sounds.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTourney.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>TestTourney.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestTourney.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tournament.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>Tournament.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TournamentResults.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>TournamentResults.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TournamentResults.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeHelp.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>WelcomeHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinHelpStuff.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WriteIco.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="AboutRoboWar.resX">
+      <DependentUpon>AboutRoboWar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseIcon.resX">
+      <DependentUpon>ChooseIcon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatingLog.resX">
+      <DependentUpon>CreatingLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debugger.resX">
+      <DependentUpon>Debugger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DraftingBoard.resX">
+      <DependentUpon>DraftingBoard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware.resX">
+      <DependentUpon>Hardware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryWindow.resX">
+      <DependentUpon>HistoryWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resX">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RWOLpen.resX">
+      <DependentUpon>RWOLpen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sounds.resX">
+      <DependentUpon>Sounds.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTourney.resX">
+      <DependentUpon>TestTourney.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tournament.resX">
+      <DependentUpon>Tournament.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TournamentResults.resX">
+      <DependentUpon>TournamentResults.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeHelp.resX">
+      <DependentUpon>WelcomeHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="RoboWar 5.ico" />
+    <None Include="_UpgradeReport.htm">
+      <SubType>Preview</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
