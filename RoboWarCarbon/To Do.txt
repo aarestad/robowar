@@ -1,0 +1,23 @@
+Feel free to add items and comments!
+
+1. Add User Interfaces for the robot stations.
+	I suggest we have a seperate window for each robot, and
+	use an HIToolbar to switch between the stations (as well as the menus).
+	The window for this will need to be built in a seperate .nib file.
+
+2. Tournament engine.
+	Windows for this should be defined in tournament.nib.
+
+3. Add support for RWXML files.
+	RWXML should eventually be the default format, however, the app should
+	still be able to read and write old-style bot files.
+
+4. Application, Document and Toolbar icons.
+
+5. Stored Preferences... use CFPreferences. -- Silly me, this was already done. - SR
+
+6. Make engine support multiple arenas (move away from global variables).
+	This will be especially useful for Tournaments run on multi-processor machines as seperate
+	battles could be run in seperate threads... sharing the load between processors.
+	Of course, we'd need mutex locks on the roster records... but that shouldn't be hard to add.
+	This will also entail actually spawning threads for each battle...

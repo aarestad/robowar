@@ -1,0 +1,1105 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		02345980000FD03B11CA0E72 = {
+			children = (
+				1870340FFE93FCAF11CA0CD7,
+			);
+			isa = PBXVariantGroup;
+			name = main.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//020
+//021
+//022
+//023
+//024
+//080
+//081
+//082
+//083
+//084
+		0867D6AAFE840B52C02AAC07 = {
+			children = (
+				0867D6ABFE840B52C02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D6ABFE840B52C02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//180
+//181
+//182
+//183
+//184
+		1870340FFE93FCAF11CA0CD7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/main.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//180
+//181
+//182
+//183
+//184
+//190
+//191
+//192
+//193
+//194
+		195DF8CFFE9D517E11CA2CBB = {
+			children = (
+				8D0C4E970486CD37000505A6,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//200
+//201
+//202
+//203
+//204
+		20286C28FDCF999611CA2CEA = {
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				SDKROOT = /Volumes/Goddess/Developer/SDKs/MacOSX10.2.8.sdk;
+			};
+			buildStyles = (
+				4A9504C5FFE6A39111CA0CBA,
+				4A9504C6FFE6A39111CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 20286C29FDCF999611CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D0C4E890486CD37000505A6,
+			);
+		};
+		20286C29FDCF999611CA2CEA = {
+			children = (
+				AABA5E04076DD53D00F72C07,
+				3A7AAB94076C970A00774345,
+				20286C2AFDCF999611CA2CEA,
+				20286C2CFDCF999611CA2CEA,
+				20286C32FDCF999611CA2CEA,
+				195DF8CFFE9D517E11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = RoboWar;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C2AFDCF999611CA2CEA = {
+			children = (
+				AA663A9808741BC30099CD9A,
+				AA663A9908741BC30099CD9A,
+				32DBCF6D0370B57F00C91783,
+				AAD70DCA0690AD5E003A9F8C,
+				AAD70DCB0690AD5E003A9F8C,
+				20286C2BFDCF999611CA2CEA,
+				AAD70DCE0690AD6E003A9F8C,
+				AAD70DD70690AD6E003A9F8C,
+				AA6CD7700690D28900F25C13,
+			);
+			isa = PBXGroup;
+			name = Sources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C2BFDCF999611CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = main.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C2CFDCF999611CA2CEA = {
+			children = (
+				AA9362950883E5960002C4E7,
+				AAACFE10087B1DEF0019B8D1,
+				AA6B814C069BAD560081305D,
+				8D0C4E960486CD37000505A6,
+				0867D6AAFE840B52C02AAC07,
+				02345980000FD03B11CA0E72,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C32FDCF999611CA2CEA = {
+			children = (
+				AA9362AD0883E60A0002C4E7,
+				20286C33FDCF999611CA2CEA,
+				4A9504CAFFE6A41611CA0CBA,
+				4A9504C8FFE6A3BC11CA0CBA,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C33FDCF999611CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//200
+//201
+//202
+//203
+//204
+//320
+//321
+//322
+//323
+//324
+		32DBCF6D0370B57F00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RoboWar_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//3A0
+//3A1
+//3A2
+//3A3
+//3A4
+		3A7AAB94076C970A00774345 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = README;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//3A0
+//3A1
+//3A2
+//3A3
+//3A4
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504C5FFE6A39111CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504C6FFE6A39111CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "-fconstant-cfstrings";
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		4A9504C8FFE6A3BC11CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = ApplicationServices.framework;
+			path = /System/Library/Frameworks/ApplicationServices.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		4A9504CAFFE6A41611CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = CoreServices.framework;
+			path = /System/Library/Frameworks/CoreServices.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D0C4E890486CD37000505A6 = {
+			buildPhases = (
+				8D0C4E8A0486CD37000505A6,
+				8D0C4E8C0486CD37000505A6,
+				8D0C4E8F0486CD37000505A6,
+				8D0C4E910486CD37000505A6,
+				8D0C4E940486CD37000505A6,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RoboWar_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Static;
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RoboWar;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = RoboWar;
+			productInstallPath = "$(HOME)/Applications";
+			productName = RoboWar;
+			productReference = 8D0C4E970486CD37000505A6;
+			productType = "com.apple.product-type.application";
+		};
+		8D0C4E8A0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8B0486CD37000505A6,
+				AAD70DCC0690AD5E003A9F8C,
+				AAD70DCD0690AD5E003A9F8C,
+				AA01B48306A20F2F00171786,
+				AA68523906B4972900F65C04,
+				AA68538606B4A3CB00F65C04,
+				AA663A9A08741BC30099CD9A,
+				AA663A9B08741BC30099CD9A,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E8B0486CD37000505A6 = {
+			fileRef = 32DBCF6D0370B57F00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E8C0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8D0486CD37000505A6,
+				8D0C4E8E0486CD37000505A6,
+				AA9362A00883E5960002C4E7,
+				AA9362A10883E5960002C4E7,
+				AA9362A20883E5960002C4E7,
+				AA9362A30883E5960002C4E7,
+				AA9362A40883E5960002C4E7,
+				AA9362A50883E5960002C4E7,
+				AA9362A60883E5960002C4E7,
+				AA9362A70883E5960002C4E7,
+				AA9362A80883E5960002C4E7,
+				AA9362A90883E5960002C4E7,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E8D0486CD37000505A6 = {
+			fileRef = 0867D6AAFE840B52C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E8E0486CD37000505A6 = {
+			fileRef = 02345980000FD03B11CA0E72;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E8F0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E900486CD37000505A6,
+				AAD70DDC0690AD6E003A9F8C,
+				AAD70DDD0690AD6E003A9F8C,
+				AAD70DDE0690AD6E003A9F8C,
+				AAD70DDF0690AD6E003A9F8C,
+				AAD70DE00690AD6E003A9F8C,
+				AAD70DE10690AD6E003A9F8C,
+				AAD70DE20690AD6E003A9F8C,
+				AAD70DE30690AD6E003A9F8C,
+				AAD70DE40690AD6E003A9F8C,
+				AAD70DE50690AD6E003A9F8C,
+				AAD70DE60690AD6E003A9F8C,
+				AAD70DE70690AD6E003A9F8C,
+				AAD70F170690B766003A9F8C,
+				AA9890D80691AFB1009828DA,
+				AA7342DA06933C0A00DFF3AA,
+				AAC535660693BAED005D639A,
+				AAC535BD0693BBFA005D639A,
+				AA0269500695E8D2003FA015,
+				AA6B8085069BA1890081305D,
+				AA68523A06B4972900F65C04,
+				AA9362B20883E6270002C4E7,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E900486CD37000505A6 = {
+			fileRef = 20286C2BFDCF999611CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D0C4E910486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E920486CD37000505A6,
+				AA9362AE0883E60A0002C4E7,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E920486CD37000505A6 = {
+			fileRef = 20286C33FDCF999611CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E940486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				AA6B814D069BAD560081305D,
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E960486CD37000505A6 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D0C4E970486CD37000505A6 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = RoboWar.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//AA0
+//AA1
+//AA2
+//AA3
+//AA4
+		AA01B48206A20F2F00171786 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RoboWar.engine.states.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA01B48306A20F2F00171786 = {
+			fileRef = AA01B48206A20F2F00171786;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA02694E0695E8D2003FA015 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.events.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA0269500695E8D2003FA015 = {
+			fileRef = AA02694E0695E8D2003FA015;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA663A9808741BC30099CD9A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CarbonWrapper.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA663A9908741BC30099CD9A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = QuickTimeWrapper.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA663A9A08741BC30099CD9A = {
+			fileRef = AA663A9808741BC30099CD9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA663A9B08741BC30099CD9A = {
+			fileRef = AA663A9908741BC30099CD9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA68523706B4972900F65C04 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RoboWar.model.preferences.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA68523806B4972900F65C04 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.preferences.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA68523906B4972900F65C04 = {
+			fileRef = AA68523706B4972900F65C04;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA68523A06B4972900F65C04 = {
+			fileRef = AA68523806B4972900F65C04;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA68538506B4A3CB00F65C04 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RoboWar.interface.errors.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA68538606B4A3CB00F65C04 = {
+			fileRef = AA68538506B4A3CB00F65C04;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA6B8083069BA1890081305D = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.defaults.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA6B8085069BA1890081305D = {
+			fileRef = AA6B8083069BA1890081305D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA6B814C069BAD560081305D = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.rsrc;
+			path = RoboWar.rsrc;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA6B814D069BAD560081305D = {
+			fileRef = AA6B814C069BAD560081305D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA6CD7700690D28900F25C13 = {
+			children = (
+				AA9362B10883E6270002C4E7,
+				AA6CD7760690D2A300F25C13,
+				AA7342D906933C0A00DFF3AA,
+				AAC535BC0693BBFA005D639A,
+				AAF13110069848B9000247F6,
+				AA6B8083069BA1890081305D,
+				AA68523706B4972900F65C04,
+				AA68523806B4972900F65C04,
+			);
+			isa = PBXGroup;
+			path = Model;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA6CD7760690D2A300F25C13 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.robot.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA7342D906933C0A00DFF3AA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.icons.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA7342DA06933C0A00DFF3AA = {
+			fileRef = AA7342D906933C0A00DFF3AA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362950883E5960002C4E7 = {
+			children = (
+				AA9362960883E5960002C4E7,
+				AA9362970883E5960002C4E7,
+				AA9362980883E5960002C4E7,
+				AA9362990883E5960002C4E7,
+				AA93629A0883E5960002C4E7,
+				AA93629B0883E5960002C4E7,
+				AA93629C0883E5960002C4E7,
+				AA93629D0883E5960002C4E7,
+				AA93629E0883E5960002C4E7,
+				AA93629F0883E5960002C4E7,
+			);
+			isa = PBXGroup;
+			path = Sounds;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362960883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Collision.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362970883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Death.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362980883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Drone.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362990883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Gun.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629A0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Hellbore.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629B0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Laser.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629C0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Mine.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629D0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = Missile.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629E0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = NukeBang.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA93629F0883E5960002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = audio.wav;
+			path = ShotHit.wav;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362A00883E5960002C4E7 = {
+			fileRef = AA9362960883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A10883E5960002C4E7 = {
+			fileRef = AA9362970883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A20883E5960002C4E7 = {
+			fileRef = AA9362980883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A30883E5960002C4E7 = {
+			fileRef = AA9362990883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A40883E5960002C4E7 = {
+			fileRef = AA93629A0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A50883E5960002C4E7 = {
+			fileRef = AA93629B0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A60883E5960002C4E7 = {
+			fileRef = AA93629C0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A70883E5960002C4E7 = {
+			fileRef = AA93629D0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A80883E5960002C4E7 = {
+			fileRef = AA93629E0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362A90883E5960002C4E7 = {
+			fileRef = AA93629F0883E5960002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362AD0883E60A0002C4E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = QuickTime.framework;
+			path = /System/Library/Frameworks/QuickTime.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		AA9362AE0883E60A0002C4E7 = {
+			fileRef = AA9362AD0883E60A0002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9362B10883E6270002C4E7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.sounds.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9362B20883E6270002C4E7 = {
+			fileRef = AA9362B10883E6270002C4E7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AA9890D60691AFB1009828DA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.interface.errors.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AA9890D80691AFB1009828DA = {
+			fileRef = AA9890D60691AFB1009828DA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAACFE10087B1DEF0019B8D1 = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.stuffit;
+			path = English.lproj.sit;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AABA5E04076DD53D00F72C07 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = "To Do.txt";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAC535660693BAED005D639A = {
+			fileRef = AA6CD7760690D2A300F25C13;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAC535BC0693BBFA005D639A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.hardware.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAC535BD0693BBFA005D639A = {
+			fileRef = AAC535BC0693BBFA005D639A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DCA0690AD5E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RoboTypes.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DCB0690AD5E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = Tokens.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DCC0690AD5E003A9F8C = {
+			fileRef = AAD70DCA0690AD5E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DCD0690AD5E003A9F8C = {
+			fileRef = AAD70DCB0690AD5E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DCE0690AD6E003A9F8C = {
+			children = (
+				AA01B48206A20F2F00171786,
+				AAD70DCF0690AD6E003A9F8C,
+				AAD70DD00690AD6E003A9F8C,
+				AAD70DD10690AD6E003A9F8C,
+				AAD70DD20690AD6E003A9F8C,
+				AAD70DD30690AD6E003A9F8C,
+				AAD70DD40690AD6E003A9F8C,
+				AAD70DD50690AD6E003A9F8C,
+				AAD70DD60690AD6E003A9F8C,
+				AA02694E0695E8D2003FA015,
+			);
+			isa = PBXGroup;
+			name = "Battle Engine";
+			path = Engine;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DCF0690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.combat.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD00690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.control.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD10690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.feedback.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD20690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.history.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD30690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.interpreter.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD40690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.interrupts.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD50690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.physics.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD60690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.engine.projectiles.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD70690AD6E003A9F8C = {
+			children = (
+				AAD70F160690B766003A9F8C,
+				AAD70DD80690AD6E003A9F8C,
+				AAD70DD90690AD6E003A9F8C,
+				AAD70DDA0690AD6E003A9F8C,
+				AAD70DDB0690AD6E003A9F8C,
+				AA68538506B4A3CB00F65C04,
+				AA9890D60691AFB1009828DA,
+			);
+			isa = PBXGroup;
+			name = "User Interface";
+			path = Interface;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD80690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.arenaView.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DD90690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.arenaWindow.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DDA0690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.campView.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DDB0690AD6E003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.chrononView.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70DDC0690AD6E003A9F8C = {
+			fileRef = AAD70DCF0690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DDD0690AD6E003A9F8C = {
+			fileRef = AAD70DD00690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DDE0690AD6E003A9F8C = {
+			fileRef = AAD70DD10690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DDF0690AD6E003A9F8C = {
+			fileRef = AAD70DD20690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE00690AD6E003A9F8C = {
+			fileRef = AAD70DD30690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE10690AD6E003A9F8C = {
+			fileRef = AAD70DD40690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE20690AD6E003A9F8C = {
+			fileRef = AAD70DD50690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE30690AD6E003A9F8C = {
+			fileRef = AAD70DD60690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE40690AD6E003A9F8C = {
+			fileRef = AAD70DD80690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE50690AD6E003A9F8C = {
+			fileRef = AAD70DD90690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE60690AD6E003A9F8C = {
+			fileRef = AAD70DDA0690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70DE70690AD6E003A9F8C = {
+			fileRef = AAD70DDB0690AD6E003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAD70F160690B766003A9F8C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.interface.events.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		AAD70F170690B766003A9F8C = {
+			fileRef = AAD70F160690B766003A9F8C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		AAF13110069848B9000247F6 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = RoboWar.model.password.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+	};
+	rootObject = 20286C28FDCF999611CA2CEA;
+}

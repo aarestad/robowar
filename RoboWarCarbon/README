@@ -1,0 +1,18 @@
+The Source code for the Carbon Port of RoboWar
+----------------------------------------------
+
+Instructions for compiling with Xcode:
+
+1. unstuf the following files:
+
+English.lproj.sit
+
+RoboWar.rsrc
+
+RW4.5DistCode/RoboWar.rsrc.sit
+
+2. Change the target SDK to being current MacOSX. 
+To do this, right click on the “RoboWar” project, and select “get info”. 
+Under: “Cross-Develop Using Target SDK” select “Current Mac OS”.
+
+3. Click on the big hammer to build!
