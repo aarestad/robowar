@@ -17,7 +17,7 @@ log = "0.4"
 env_logger = "0.11"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-rodio = { version = "0.20", optional = true }
+rodio = { version = "0.22.1", optional = true }
 
 [features]
 default = []
