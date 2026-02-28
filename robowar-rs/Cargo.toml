@@ -1,0 +1,32 @@
+[package]
+name = "robowar"
+version = "5.4.0"
+edition = "2021"
+authors = ["RoboWar Community"]
+license = "GPL-3.0"
+description = "RoboWar 5 - Robot Battle Simulation Game"
+
+[dependencies]
+gtk4 = "0.11"
+gio = "0.22"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+directories = "6.0"
+log = "0.4"
+env_logger = "0.11"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+rodio = { version = "0.20", optional = true }
+
+[features]
+default = []
+audio = []
+
+[lib]
+name = "robowar"
+path = "src/lib.rs"
+
+[[bin]]
+name = "robowar"
+path = "src/main.rs"

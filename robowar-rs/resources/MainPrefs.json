@@ -1,0 +1,22 @@
+{
+  "sounds": true,
+  "scoring_system": false,
+  "chronon_limit": true,
+  "tournament_rounds": 0,
+  "tournament_value": 0,
+  "drafting_board_window_state": false,
+  "main_window_window_state": false,
+  "move_and_shoot": false,
+  "reset_cursor_position": false,
+  "overload_enabled": false,
+  "first_time_startup": true,
+  "ultra_warning": 0,
+  "auto_recompile": true,
+  "debugger_window_x": 38,
+  "print_instruction_numbers": true,
+  "syntax_coloring": true,
+  "battle_speed": 0,
+  "change_resolution": false,
+  "speed_constant": 5.831554e-39,
+  "auto_no_sound": false
+}
