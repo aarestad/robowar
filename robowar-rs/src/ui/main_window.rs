@@ -1,4 +1,5 @@
 use std::cell::RefCell;
+use std::path::PathBuf;
 use std::rc::Rc;
 
 use gtk::prelude::*;
@@ -6,8 +7,35 @@ use gtk4 as gtk;
 
 use crate::arena::engine::Arena;
 use crate::arena::robot::{load_sample_robots, Robot};
+use crate::ui::tutorial::create_tutorial_window;
 
 const ARENA_DRAW_SIZE: i32 = 400;
+
+fn get_resources_path() -> PathBuf {
+    let mut path = std::env::current_exe().unwrap_or_default();
+    path.pop();
+    path.join("resources")
+}
+
+pub fn get_sounds_path() -> PathBuf {
+    get_resources_path().join("sounds")
+}
+
+pub fn get_images_path() -> PathBuf {
+    get_resources_path().join("images")
+}
+
+pub fn get_icons_path() -> PathBuf {
+    get_resources_path().join("icons")
+}
+
+pub fn get_configs_path() -> PathBuf {
+    get_resources_path().join("configs")
+}
+
+pub fn get_macros_path() -> PathBuf {
+    get_resources_path().join("macros")
+}
 
 pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     let window = gtk::ApplicationWindow::new(app);
@@ -30,6 +58,7 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     let stop_btn = gtk::Button::with_label("Stop");
     let step_btn = gtk::Button::with_label("Step");
     let reset_btn = gtk::Button::with_label("Reset");
+    let tutorial_btn = gtk::Button::with_label("Tutorial");
 
     let status_label = gtk::Label::new(Some("Ready - Load robots to begin"));
 
@@ -37,6 +66,7 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     toolbar.append(&stop_btn);
     toolbar.append(&step_btn);
     toolbar.append(&reset_btn);
+    toolbar.append(&tutorial_btn);
     toolbar.append(&status_label);
 
     let arena = Rc::new(RefCell::new(Arena::new()));
@@ -144,7 +174,9 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     let loaded_robots_clone = loaded_robots.clone();
 
     add_robot_btn.connect_clicked(move |_| {
-        let sample_robots = load_sample_robots(std::path::Path::new("."));
+        let resources_path = get_resources_path();
+        let robots_path = resources_path.join("robots");
+        let sample_robots = load_sample_robots(&robots_path);
         let mut loaded = loaded_robots_clone.borrow_mut();
         let mut arena = arena_clone3.borrow_mut();
 
@@ -162,6 +194,12 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
         } else {
             status_label4.set_text("No robot files found");
         }
+    });
+
+    let app_clone = app.clone();
+    tutorial_btn.connect_clicked(move |_| {
+        let tut_window = create_tutorial_window(&app_clone);
+        tut_window.show();
     });
 
     window

@@ -1,0 +1,1 @@
+aim dup 6 sin speedx' sto -6 cos speedy' sto
