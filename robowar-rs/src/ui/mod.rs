@@ -1,3 +1,13 @@
+pub mod about;
 pub mod app;
+pub mod choose_icon;
+pub mod creating_log;
+pub mod drafting_board;
+pub mod file_dialog;
+pub mod hardware;
+pub mod history_window;
 pub mod main_window;
+pub mod test_tourney;
+pub mod tournament;
+pub mod tournament_results;
 pub mod tutorial;

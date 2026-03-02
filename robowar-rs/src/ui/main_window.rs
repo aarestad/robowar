@@ -7,6 +7,9 @@ use gtk4 as gtk;
 
 use crate::arena::engine::Arena;
 use crate::arena::robot::{load_sample_robots, Robot};
+use crate::ui::about::create_about_window;
+use crate::ui::drafting_board::create_drafting_board;
+use crate::ui::hardware::create_hardware_window;
 use crate::ui::tutorial::create_tutorial_window;
 
 const ARENA_DRAW_SIZE: i32 = 400;
@@ -59,6 +62,9 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     let step_btn = gtk::Button::with_label("Step");
     let reset_btn = gtk::Button::with_label("Reset");
     let tutorial_btn = gtk::Button::with_label("Tutorial");
+    let hardware_btn = gtk::Button::with_label("Hardware");
+    let edit_btn = gtk::Button::with_label("Edit Code");
+    let about_btn = gtk::Button::with_label("About");
 
     let status_label = gtk::Label::new(Some("Ready - Load robots to begin"));
 
@@ -67,6 +73,9 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     toolbar.append(&step_btn);
     toolbar.append(&reset_btn);
     toolbar.append(&tutorial_btn);
+    toolbar.append(&hardware_btn);
+    toolbar.append(&edit_btn);
+    toolbar.append(&about_btn);
     toolbar.append(&status_label);
 
     let arena = Rc::new(RefCell::new(Arena::new()));
@@ -200,6 +209,25 @@ pub fn create_main_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     tutorial_btn.connect_clicked(move |_| {
         let tut_window = create_tutorial_window(&app_clone);
         tut_window.show();
+    });
+
+    let app_clone2 = app.clone();
+    hardware_btn.connect_clicked(move |_| {
+        let robot = Robot::default();
+        let hw_window = create_hardware_window(&app_clone2, robot, 9);
+        hw_window.show();
+    });
+
+    let app_clone3 = app.clone();
+    edit_btn.connect_clicked(move |_| {
+        let robot = Robot::default();
+        let edit_window = create_drafting_board(&app_clone3, robot);
+        edit_window.show();
+    });
+
+    about_btn.connect_clicked(move |_| {
+        let about_window = create_about_window();
+        about_window.show();
     });
 
     window
