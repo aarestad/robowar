@@ -2,6 +2,7 @@ pub mod about;
 pub mod app;
 pub mod choose_icon;
 pub mod creating_log;
+pub mod debugger;
 pub mod drafting_board;
 pub mod file_dialog;
 pub mod hardware;

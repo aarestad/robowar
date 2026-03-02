@@ -295,6 +295,21 @@ impl Vm {
         self.stack.last().copied()
     }
 
+    pub fn step_instruction(&mut self) -> bool {
+        if !self.running || self.ip >= self.code.len() || self.error.is_some() {
+            return false;
+        }
+
+        let instr = self.code[self.ip];
+        self.execute_instruction(instr);
+
+        if self.ip < self.code.len() && self.error.is_none() && self.running {
+            self.ip += 1;
+            return true;
+        }
+        false
+    }
+
     pub fn execute(&mut self) {
         while self.running && self.ip < self.code.len() && self.error.is_none() {
             let instr = self.code[self.ip];

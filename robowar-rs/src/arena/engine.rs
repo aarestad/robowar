@@ -150,6 +150,77 @@ impl Arena {
         self.check_winner();
     }
 
+    pub fn step_instruction_all(&mut self) {
+        if !self.running {
+            return;
+        }
+
+        for (idx, robot) in self.robots.iter_mut().enumerate() {
+            if !robot.alive || robot.vm.error.is_some() {
+                continue;
+            }
+
+            let continued = robot.vm.step_instruction();
+
+            if let Some(err) = &robot.vm.error {
+                log::warn!(
+                    "Robot {} error at instruction {}: {}",
+                    idx,
+                    robot.vm.ip,
+                    err
+                );
+                robot.alive = false;
+            }
+
+            if !continued {
+                robot.vm.running = false;
+            }
+        }
+
+        if self.chronon == 0 {
+            self.chronon = 1;
+        }
+    }
+
+    pub fn step_chronon(&mut self) {
+        if !self.running {
+            return;
+        }
+
+        self.chronon += 1;
+
+        for robot in &mut self.robots {
+            if !robot.alive {
+                continue;
+            }
+            robot.vm.running = true;
+        }
+
+        let mut all_stopped = false;
+        while !all_stopped && self.running {
+            all_stopped = true;
+            for robot in &mut self.robots {
+                if !robot.alive || robot.vm.error.is_some() {
+                    continue;
+                }
+                if robot.vm.running && robot.vm.ip < robot.vm.code.len() {
+                    robot.vm.execute();
+                    if let Some(err) = &robot.vm.error {
+                        log::warn!("Robot error at chronon {}: {}", self.chronon, err);
+                        robot.alive = false;
+                    }
+                    if robot.vm.running {
+                        all_stopped = false;
+                    }
+                }
+            }
+        }
+
+        self.update_shots();
+        self.check_collisions();
+        self.check_winner();
+    }
+
     fn update_shots(&mut self) {
         for shot in &mut self.shots {
             shot.x += shot.vx;
